@@ -1,13 +1,29 @@
-// Portfolio — Youness Bakas : scène, apparitions et vérificateur ISO 6346, sans dépendance.
+// Portfolio — Youness Bakas : apparitions, index des projets et vérificateur ISO 6346, sans dépendance.
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Entrée du hero
   const hero = document.querySelector('.hero');
+  document.querySelectorAll('.band > *').forEach((el, i) => el.style.setProperty('--i', i));
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('is-loaded')));
 
+  // Le portrait glisse lentement avec le scroll
+  const photo = document.querySelector('.hero-photo');
+  if (!reduce && photo) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.2) photo.style.translate = '0 ' + (y * 0.12) + 'px';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   // Apparitions : délai échelonné à l'intérieur de chaque section
-  document.querySelectorAll('section, header').forEach((scope) => {
+  document.querySelectorAll('section').forEach((scope) => {
     scope.querySelectorAll('.reveal').forEach((el, i) => el.style.setProperty('--i', Math.min(i, 8)));
   });
   const reveals = document.querySelectorAll('.reveal');
@@ -25,46 +41,33 @@
     reveals.forEach((el) => el.classList.add('is-in'));
   }
 
-  // La scène : la photo fixe suit la section lue
-  const shots = document.querySelectorAll('.stage-img');
-  const captions = document.querySelectorAll('.stage-caption span');
-  let current = 'portrait';
+  // Index des projets : survol, clic ou flèches du clavier
+  const tabs = Array.from(document.querySelectorAll('.index-row'));
+  const panels = Array.from(document.querySelectorAll('.panel'));
 
-  function show(name) {
-    if (!name || name === current) return;
-    current = name;
-    shots.forEach((img) => {
-      const on = img.dataset.shot === name;
-      if (on && img.loading === 'lazy') img.loading = 'eager';
-      img.classList.toggle('is-on', on);
+  function select(tab, focus) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
     });
-    captions.forEach((c) => c.classList.toggle('is-on', c.dataset.for === name));
+    panels.forEach((p) => p.classList.toggle('is-on', p.id === tab.getAttribute('aria-controls')));
+    if (focus) tab.focus();
   }
 
-  const chapters = document.querySelectorAll('.column [data-shot]:not(.row)');
-  let openRow = document.querySelector('.row[open]');
-  if ('IntersectionObserver' in window) {
-    const so = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        // Dans les projets, la photo suit la ligne ouverte
-        if (el.id === 'projets' && openRow) show(openRow.dataset.shot);
-        else show(el.dataset.shot);
+  if (tabs.length) {
+    select(tabs[0]);
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('mouseenter', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
+        else if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
+        else if (step) { e.preventDefault(); select(tabs[(i + step + tabs.length) % tabs.length], true); }
       });
-    }, { rootMargin: '-50% 0px -50% 0px' });
-    chapters.forEach((el) => so.observe(el));
-  }
-
-  // Projets : survol, focus ou ouverture d'une ligne
-  document.querySelectorAll('.row').forEach((row) => {
-    const pick = () => show(row.dataset.shot);
-    row.addEventListener('mouseenter', pick);
-    row.addEventListener('focusin', pick);
-    row.addEventListener('toggle', () => {
-      if (row.open) { openRow = row; pick(); }
     });
-  });
+  }
 
   // Vérificateur de matricule (norme ISO 6346)
   const form = document.getElementById('check');
@@ -116,8 +119,7 @@
     last.innerHTML = '<b>' + given + '</b><small>' + (ok ? 'ok' : expected) + '</small>';
     boxes.appendChild(last);
 
-    const cat = code[3];
-    const catNote = 'UJZ'.includes(cat) ? '' : ' La 4e lettre devrait être U, J ou Z.';
+    const catNote = 'UJZ'.includes(code[3]) ? '' : ' La 4e lettre devrait être U, J ou Z.';
     result.innerHTML = ok
       ? '<strong>Matricule valide.</strong> Somme pondérée ' + sum + ', reste ' + (sum % 11) + '&nbsp;: le chiffre de contrôle est bien ' + expected + '.' + catNote
       : '<strong>Matricule invalide.</strong> Le chiffre de contrôle devrait être ' + expected + ', pas ' + given + '.' + catNote;
