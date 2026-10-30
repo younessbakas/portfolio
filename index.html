@@ -4,264 +4,305 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Youness Bakas — Management, transit et digital</title>
-  <meta name="description" content="Portfolio de Youness Bakas, étudiant en DUT Techniques de Management à Agadir, en stage en transit et douane. Projets digitaux, automatisation et IA appliqués à la logistique.">
+  <meta name="description" content="Portfolio de Youness Bakas, étudiant en DUT Techniques de Management, en stage chez un transitaire à Agadir. Sites web et outils pour la logistique et le transit.">
   <link rel="canonical" href="https://ybakas.me/">
   <meta name="theme-color" content="#eef3fb">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:locale" content="fr_MA">
+  <meta property="og:site_name" content="Youness Bakas">
   <meta property="og:title" content="Youness Bakas — Management, transit et digital">
   <meta property="og:description" content="Étudiant en DUT Techniques de Management, en stage chez un transitaire à Agadir. Je cherche un stage ou un premier emploi.">
   <meta property="og:url" content="https://ybakas.me/">
   <meta property="og:image" content="https://ybakas.me/assets/img/portrait.jpg">
+  <meta property="og:image:alt" content="Portrait de Youness Bakas">
   <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Youness Bakas",
+    "url": "https://ybakas.me/",
+    "image": "https://ybakas.me/assets/img/portrait.jpg",
+    "jobTitle": "Étudiant en DUT Techniques de Management",
+    "address": { "@type": "PostalAddress", "addressLocality": "Agadir", "addressCountry": "MA" },
+    "alumniOf": "École Supérieure de Technologie de Guelmim",
+    "sameAs": ["https://www.linkedin.com/in/bakas-youness"]
+  }
+  </script>
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/portrait.jpg">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
 
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="nav-mark" href="#top">Youness Bakas</a>
-    <ul class="nav-links">
-      <li><a href="#a-propos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-    </ul>
-    <a class="nav-cta" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">LinkedIn</a>
-  </nav>
+  <div class="split" id="top">
 
-  <header class="hero" id="top">
-    <div class="hero-panel" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <h1 class="hero-name" aria-label="Youness Bakas">
-        <span class="line"><span class="word">Youness</span></span>
-        <span class="line"><span class="word">Bakas</span></span>
-      </h1>
-      <div class="hero-text">
-        <p class="hero-role reveal">Management, transit et digital</p>
-        <p class="hero-sentence reveal">Étudiant en DUT Techniques de Management, en stage chez un transitaire à Agadir. Je cherche un stage ou un premier emploi.</p>
-        <div class="hero-actions reveal">
-          <a class="btn" href="#projets">Voir mes projets <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="link" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <figure class="hero-photo shutter">
-        <img src="assets/img/portrait.jpg" width="921" height="1280" alt="Portrait de Youness Bakas, chemise blanche, bras croisés">
+    <!-- Photo fixe : change avec la section lue -->
+    <div class="stage" aria-hidden="true">
+      <figure class="stage-frame">
+        <img class="stage-img is-on pos-face" data-shot="portrait" src="assets/img/portrait.jpg" width="921" height="1280" alt="">
+        <img class="stage-img" data-shot="port" src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" alt="" loading="lazy">
+        <img class="stage-img pos-right" data-shot="quai" src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" alt="" loading="lazy">
+        <img class="stage-img pos-start" data-shot="sntc" src="assets/img/projet-sntc.jpg" width="1440" height="1080" alt="" loading="lazy">
+        <img class="stage-img pos-start" data-shot="somatime" src="assets/img/projet-somatime.jpg" width="1440" height="1080" alt="" loading="lazy">
+        <img class="stage-img" data-shot="agadir" src="assets/img/portrait-agadir.jpg" width="1280" height="1280" alt="" loading="lazy">
+        <figcaption class="stage-caption">
+          <span class="is-on" data-for="portrait">Youness Bakas</span>
+          <span data-for="port">Le port d'Agadir, vu de l'Agadir Oufella · photo Abdeaitali, CC BY-SA 4.0</span>
+          <span data-for="quai">Quais du port d'Agadir · photo Niels Johannes, CC BY-SA 4.0</span>
+          <span data-for="sntc">sntctransit.ma</span>
+          <span data-for="somatime">somatime.ma</span>
+          <span data-for="agadir">Sur la côte d'Agadir</span>
+        </figcaption>
       </figure>
     </div>
-  </header>
 
-  <div class="band" aria-hidden="true">
-    <p class="band-track">Management · Transit · Douane · Logistique · Automatisation · IA · Management · Transit · Douane · Logistique · Automatisation · IA ·</p>
+    <div class="column">
+
+      <header class="card hero" data-shot="portrait">
+        <div class="ribs" aria-hidden="true"></div>
+        <nav class="hero-nav" aria-label="Navigation principale">
+          <a href="#a-propos">À propos</a>
+          <a href="#projets">Projets</a>
+          <a href="#competences">Compétences</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="hero-body">
+          <h1 class="hero-title"><span class="ln">Youness Bakas,</span> <span class="ln">management et transit</span></h1>
+          <p class="hero-sentence">Étudiant en DUT Techniques de Management, en stage chez un transitaire au port d'Agadir. Je cherche un stage ou un premier emploi.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projets"><span>Voir mes projets</span><span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="link" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+
+        <section class="letter" id="a-propos" data-shot="port" aria-labelledby="letter-title">
+          <h2 class="visually-hidden" id="letter-title">À propos</h2>
+          <img class="letter-face reveal pos-face" src="assets/img/portrait.jpg" width="921" height="1280" alt="Portrait de Youness Bakas" loading="lazy">
+          <div class="letter-body">
+            <p class="reveal">Je m'appelle Youness Bakas. Je suis en 2e année de DUT Techniques de Management à l'École Supérieure de Technologie de Guelmim, Université Ibn Zohr.</p>
+            <p class="reveal">Je fais mon stage chez NEHAME, un transitaire d'Agadir. J'y découvre le dédouanement et le freight forwarding de l'intérieur.</p>
+            <p class="reveal">Ce qui m'anime&nbsp;: <mark>utiliser l'IA et l'automatisation pour rendre la logistique et le transit plus simples et plus fiables.</mark></p>
+            <p class="reveal">En parallèle, j'ai développé et mis en ligne les sites de deux entreprises maritimes d'Agadir, SNTC et Somatime.</p>
+            <p class="reveal">Je cherche un stage ou un premier emploi en management, en logistique ou dans le transit.</p>
+          </div>
+          <p class="letter-sign reveal">Youness Bakas</p>
+          <p class="letter-role reveal">Agadir, Maroc</p>
+        </section>
+
+        <section class="work" id="projets" data-shot="quai" aria-labelledby="work-title">
+          <h2 class="work-title reveal" id="work-title">Projets</h2>
+          <p class="work-intro reveal">Cinq projets, chez NEHAME et pour deux entreprises maritimes. Ouvrez une ligne pour le détail.</p>
+
+          <div class="ledger">
+            <details class="row reveal" data-shot="quai" open>
+              <summary><span class="row-name">Vérification des matricules conteneurs</span><span class="row-kind">Automatisation</span><span class="row-org">NEHAME</span></summary>
+              <div class="row-panel">
+                <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
+                <dl class="psd">
+                  <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
+                  <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
+                </dl>
+                <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
+
+                <form class="check" id="check" novalidate>
+                  <p class="check-title">Essayez la règle</p>
+                  <p class="check-note">Tout matricule suit la norme publique ISO 6346&nbsp;: 4 lettres, 6 chiffres et un chiffre de contrôle. Tapez un numéro pour le vérifier.</p>
+                  <label class="visually-hidden" for="check-input">Matricule de conteneur</label>
+                  <div class="check-field">
+                    <input id="check-input" name="matricule" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="14" value="CSQU3054383" aria-describedby="check-result">
+                    <button class="check-btn" type="submit" aria-label="Vérifier le matricule"><span aria-hidden="true">→</span></button>
+                  </div>
+                  <ol class="check-boxes" aria-hidden="true"></ol>
+                  <p class="check-result" id="check-result" role="status" aria-live="polite">Le chiffre de contrôle se calcule à partir des 10 premiers caractères.</p>
+                </form>
+              </div>
+            </details>
+
+            <details class="row reveal" data-shot="quai">
+              <summary><span class="row-name">Tableau de suivi des DUM</span><span class="row-kind">Prototype</span><span class="row-org">NEHAME</span></summary>
+              <div class="row-panel">
+                <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
+                <dl class="psd">
+                  <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
+                  <div><dt>Solution</dt><dd>Une vue unique des étapes de chaque DUM.</dd></div>
+                </dl>
+                <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
+              </div>
+            </details>
+
+            <details class="row reveal" data-shot="sntc">
+              <summary><span class="row-name">Site SNTC</span><span class="row-kind">Site web</span><span class="row-org">SNTC</span></summary>
+              <div class="row-panel">
+                <figure class="row-shot"><img class="pos-start" src="assets/img/projet-sntc.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site sntctransit.ma : grues portuaires et navire, titre « Votre partenaire logistique global, sans frontières »"></figure>
+                <p>Le site de la Société Nehame de Transit et Consignation (Agadir, Casablanca, Tanger), développé et mis en ligne par moi, de l'hébergement au référencement.</p>
+                <dl class="psd">
+                  <div><dt>Problème</dt><dd>Présenter l'entreprise et ses bureaux, et recevoir des demandes en ligne.</dd></div>
+                  <div><dt>Solution</dt><dd>Un site sécurisé, référencé sur Google, avec formulaire de contact.</dd></div>
+                  <div><dt>Outils</dt><dd>Hébergement Hostino, SSL, Google Search Console, Web3Forms</dd></div>
+                </dl>
+                <a class="link" href="https://sntctransit.ma" target="_blank" rel="noopener">sntctransit.ma <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </details>
+
+            <details class="row reveal" data-shot="somatime">
+              <summary><span class="row-name">Site Somatime</span><span class="row-kind">Refonte</span><span class="row-org">Somatime</span></summary>
+              <div class="row-panel">
+                <figure class="row-shot"><img class="pos-start" src="assets/img/projet-somatime.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site somatime.ma : navire au large d'Agadir, titre « Votre partenaire maritime depuis 1958 »"></figure>
+                <p>Refonte complète du site de Somatime, Société Maritime d'Agadir.</p>
+                <dl class="psd">
+                  <div><dt>Mon rôle</dt><dd>Refonte et développement du site, réalisés par moi.</dd></div>
+                </dl>
+                <a class="link" href="https://somatime.ma" target="_blank" rel="noopener">somatime.ma <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </details>
+
+            <details class="row reveal" data-shot="quai">
+              <summary><span class="row-name">Suivi des demandes reçues</span><span class="row-kind">Tableaux de bord</span><span class="row-org">NEHAME</span></summary>
+              <div class="row-panel">
+                <p>Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
+                <dl class="psd">
+                  <div><dt>Problème</dt><dd>Des demandes qui arrivent par plusieurs sites et qu'il ne faut pas perdre.</dd></div>
+                  <div><dt>Solution</dt><dd>Un suivi centralisé de chaque demande, de l'arrivée au traitement.</dd></div>
+                </dl>
+                <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="skills" id="competences" data-shot="agadir" aria-labelledby="skills-title">
+          <h2 class="giant reveal" id="skills-title">Compétences</h2>
+          <p class="skills-intro reveal">À l'aise avec les outils d'IA, y compris les plus récents&nbsp;: je m'adapte vite et je travaille bien avec eux.</p>
+          <div class="bars">
+            <details class="bar reveal" open>
+              <summary>Points forts<span class="plus" aria-hidden="true"></span></summary>
+              <ul>
+                <li><span>Intelligence artificielle</span><span>Outils d'IA</span></li>
+                <li><span>Prompt engineering</span><span>IA</span></li>
+                <li><span>SQL</span><span>Données</span></li>
+              </ul>
+            </details>
+            <details class="bar reveal">
+              <summary>Savoir-faire<span class="plus" aria-hidden="true"></span></summary>
+              <ul>
+                <li><span>Travail en équipe</span></li>
+                <li><span>Maîtrise des outils numériques</span></li>
+                <li><span>Rédaction et reporting</span></li>
+                <li><span>Apprentissage rapide</span></li>
+              </ul>
+            </details>
+            <details class="bar reveal">
+              <summary>Logiciels<span class="plus" aria-hidden="true"></span></summary>
+              <ul>
+                <li><span>Pack Office</span><span>Word, Excel, PowerPoint</span></li>
+                <li><span>Suite Adobe</span><span>Photoshop, Illustrator</span></li>
+                <li><span>n8n</span><span>Automatisation</span></li>
+                <li><span>Google Workspace</span></li>
+              </ul>
+            </details>
+            <details class="bar reveal">
+              <summary>Langues<span class="plus" aria-hidden="true"></span></summary>
+              <ul>
+                <li><span>Arabe</span><span>Maternelle</span></li>
+                <li><span>Tamazight</span><span>Maternelle</span></li>
+                <li><span>Français</span><span>Courant</span></li>
+                <li><span>Anglais</span><span>Intermédiaire</span></li>
+              </ul>
+            </details>
+            <details class="bar reveal">
+              <summary>Centres d'intérêt<span class="plus" aria-hidden="true"></span></summary>
+              <ul>
+                <li><span>Football</span></li>
+                <li><span>Scoutisme</span></li>
+                <li><span>Nouveautés tech et IA</span></li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+      </main>
+    </div>
   </div>
 
-  <main id="main">
-
-    <section class="about wrap" id="a-propos" aria-labelledby="about-title">
-      <h2 class="visually-hidden" id="about-title">À propos</h2>
-      <dl class="facts reveal-group">
-        <div><dt>Basé à</dt><dd>Agadir, Maroc</dd></div>
-        <div><dt>Formation</dt><dd>DUT Techniques de Management, 2e année</dd></div>
-        <div><dt>Stage actuel</dt><dd>NEHAME, transit et douane</dd></div>
-        <div><dt>Recherche</dt><dd>Stage ou emploi</dd></div>
-      </dl>
-      <p class="about-text reveal">Je suis étudiant en 2e année de DUT Techniques de Management à l'École Supérieure de Technologie de Guelmim. En stage chez NEHAME, transitaire à Agadir, je découvre le dédouanement et le freight forwarding de l'intérieur. Ce qui m'anime&nbsp;: utiliser l'IA et l'automatisation pour rendre la logistique et le transit plus simples et plus fiables.</p>
-    </section>
-
-    <section class="work wrap" id="projets" aria-labelledby="work-title">
-      <h2 class="section-title reveal" id="work-title">Projets</h2>
-
-      <article class="project">
-        <div class="project-text reveal-group">
-          <h3>Vérification des matricules conteneurs</h3>
-          <p class="project-context">NEHAME · Transit et douane</p>
-          <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
-          <dl class="psd">
-            <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
-            <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
-            <div><dt>Domaine</dt><dd>Automatisation</dd></div>
-          </dl>
+  <section class="path" id="parcours" aria-labelledby="path-title">
+    <div class="path-inner">
+      <h2 class="path-title reveal" id="path-title">Parcours</h2>
+      <div class="path-col">
+        <h3 class="path-group reveal">Expérience</h3>
+        <div class="entry reveal">
+          <p class="entry-what">Stagiaire, NEHAME</p>
+          <p class="entry-when">En cours</p>
+          <p class="entry-where">Transit et douane, freight forwarding · Agadir</p>
         </div>
-        <figure class="project-media shutter placeholder">
-          <div class="placeholder-inner"><span>Capture à venir</span><small>Données sensibles floutées</small></div>
-        </figure>
-      </article>
-
-      <article class="project">
-        <div class="project-text reveal-group">
-          <h3>Tableau de suivi des DUM</h3>
-          <p class="project-context">NEHAME · Prototype</p>
-          <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
-          <dl class="psd">
-            <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
-            <div><dt>Solution</dt><dd>Une vue unique des étapes de chaque DUM.</dd></div>
-            <div><dt>Domaine</dt><dd>Suivi et reporting</dd></div>
-          </dl>
-        </div>
-        <figure class="project-media shutter placeholder">
-          <div class="placeholder-inner"><span>Capture à venir</span><small>Données sensibles floutées</small></div>
-        </figure>
-      </article>
-
-      <article class="project">
-        <div class="project-text reveal-group">
-          <h3>Site SNTC</h3>
-          <p class="project-context">Société Nehame de Transit et Consignation · Agadir, Casablanca, Tanger</p>
-          <p>Le site de l'entreprise, développé et mis en ligne par moi, de l'hébergement au référencement.</p>
-          <dl class="psd">
-            <div><dt>Problème</dt><dd>Présenter l'entreprise et ses bureaux, et recevoir des demandes en ligne.</dd></div>
-            <div><dt>Solution</dt><dd>Un site sécurisé, référencé sur Google, avec formulaire de contact.</dd></div>
-            <div><dt>Outils</dt><dd>Hébergement Hostino, SSL, Google Search Console, Web3Forms</dd></div>
-          </dl>
-          <a class="link" href="https://sntctransit.ma" target="_blank" rel="noopener">sntctransit.ma <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-        <figure class="project-media shutter">
-          <img src="assets/img/projet-sntc.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site sntctransit.ma : grues portuaires et navire, titre « Votre partenaire logistique global, sans frontières »">
-        </figure>
-      </article>
-
-      <article class="project">
-        <div class="project-text reveal-group">
-          <h3>Site Somatime</h3>
-          <p class="project-context">Somatime Agadir · Société maritime</p>
-          <p>Refonte complète du site de Somatime, Société Maritime d'Agadir.</p>
-          <dl class="psd">
-            <div><dt>Mon rôle</dt><dd>Refonte et développement du site, réalisés par moi.</dd></div>
-          </dl>
-          <a class="link" href="https://somatime.ma" target="_blank" rel="noopener">somatime.ma <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-        <figure class="project-media shutter">
-          <img src="assets/img/projet-somatime.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site somatime.ma : navire au large d'Agadir, titre « Votre partenaire maritime depuis 1958 »">
-        </figure>
-      </article>
-
-      <article class="project">
-        <div class="project-text reveal-group">
-          <h3>Suivi des demandes reçues</h3>
-          <p class="project-context">NEHAME · Tableaux de bord</p>
-          <p>Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
-          <dl class="psd">
-            <div><dt>Problème</dt><dd>Des demandes qui arrivent par plusieurs sites et qu'il ne faut pas perdre.</dd></div>
-            <div><dt>Solution</dt><dd>Un suivi centralisé de chaque demande, de l'arrivée au traitement.</dd></div>
-            <div><dt>Domaine</dt><dd>Suivi et reporting</dd></div>
-          </dl>
-        </div>
-        <figure class="project-media shutter placeholder">
-          <div class="placeholder-inner"><span>Capture à venir</span><small>Données sensibles floutées</small></div>
-        </figure>
-      </article>
-    </section>
-
-    <section class="skills" id="competences" aria-labelledby="skills-title">
-      <div class="wrap skills-inner">
-        <div class="skills-intro">
-          <h2 class="section-title reveal" id="skills-title">Compétences</h2>
-          <p class="reveal">À l'aise avec les outils d'IA, y compris les plus récents&nbsp;: je m'adapte vite et je travaille bien avec eux.</p>
-        </div>
-        <div class="rows">
-          <div class="group reveal-group">
-            <p class="group-name">Points forts</p>
-            <ul>
-              <li class="strong"><span class="dot" aria-hidden="true"></span><span class="name">Intelligence artificielle</span><span class="val">Outils d'IA</span></li>
-              <li class="strong"><span class="dot" aria-hidden="true"></span><span class="name">Prompt engineering</span><span class="val">IA</span></li>
-              <li class="strong"><span class="dot" aria-hidden="true"></span><span class="name">SQL</span><span class="val">Données</span></li>
-            </ul>
-          </div>
-          <div class="group reveal-group">
-            <p class="group-name">Savoir-faire</p>
-            <ul>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Travail en équipe</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Maîtrise des outils numériques</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Rédaction et reporting</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Apprentissage rapide</span></li>
-            </ul>
-          </div>
-          <div class="group reveal-group">
-            <p class="group-name">Logiciels</p>
-            <ul>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Pack Office</span><span class="val">Word, Excel, PowerPoint</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Suite Adobe</span><span class="val">Photoshop, Illustrator</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">n8n</span><span class="val">Automatisation</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Google Workspace</span></li>
-            </ul>
-          </div>
-          <div class="group reveal-group">
-            <p class="group-name">Langues</p>
-            <ul>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Arabe</span><span class="val">Maternelle</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Tamazight</span><span class="val">Maternelle</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Français</span><span class="val">Courant</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Anglais</span><span class="val">Intermédiaire</span></li>
-            </ul>
-          </div>
-          <div class="group reveal-group">
-            <p class="group-name">Centres d'intérêt</p>
-            <ul>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Football</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Scoutisme</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span class="name">Nouveautés tech et IA</span></li>
-            </ul>
-          </div>
+        <div class="entry reveal">
+          <p class="entry-what">Assistant magasinier, Danialand</p>
+          <p class="entry-when">2025 · 2 mois</p>
+          <p class="entry-where">Contrôle des entrées et sorties de marchandises sur Excel, gestion des demandes de matériel, suivi des stocks et rapports pour les équipes techniques.</p>
         </div>
       </div>
-    </section>
-
-    <section class="path wrap" id="parcours" aria-labelledby="path-title">
-      <h2 class="section-title reveal" id="path-title">Parcours</h2>
-      <div class="path-cols">
-        <div class="path-col reveal-group">
-          <p class="group-name">Expérience</p>
-          <div class="entry">
-            <div class="entry-head"><h3>Stagiaire, NEHAME</h3><span class="val">En cours</span></div>
-            <p class="entry-place">Transit et douane, freight forwarding · Agadir</p>
-          </div>
-          <div class="entry">
-            <div class="entry-head"><h3>Assistant magasinier, Danialand</h3><span class="val">2025 · 2 mois</span></div>
-            <p>Contrôle des entrées et sorties de marchandises sur Excel, gestion des demandes de matériel, suivi des stocks et rapports pour les équipes techniques.</p>
-          </div>
+      <div class="path-col">
+        <h3 class="path-group reveal">Formation</h3>
+        <div class="entry reveal">
+          <p class="entry-what">DUT Techniques de Management</p>
+          <p class="entry-when">2e année</p>
+          <p class="entry-where">École Supérieure de Technologie de Guelmim · Université Ibn Zohr</p>
         </div>
-        <div class="path-col reveal-group">
-          <p class="group-name">Formation</p>
-          <div class="entry">
-            <div class="entry-head"><h3>DUT Techniques de Management</h3><span class="val">2e année</span></div>
-            <p class="entry-place">École Supérieure de Technologie de Guelmim · Université Ibn Zohr</p>
-          </div>
-          <div class="entry">
-            <div class="entry-head"><h3>Baccalauréat Sciences Économiques</h3></div>
-            <p class="entry-place">Lycée Al Massira Al Khadra · Massa</p>
-          </div>
+        <div class="entry reveal">
+          <p class="entry-what">Baccalauréat Sciences Économiques</p>
+          <p class="entry-where">Lycée Al Massira Al Khadra · Massa</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap contact-inner">
-        <h2 class="visually-hidden" id="contact-title">Contact</h2>
-        <p class="contact-sentence reveal">Vous recrutez en management, logistique ou transit&nbsp;? Parlons-en.</p>
-        <figure class="contact-photo shutter">
-          <img src="assets/img/portrait-agadir.jpg" width="480" height="480" loading="lazy" alt="Youness Bakas en terrasse face à la mer, sur la côte d'Agadir">
-        </figure>
-        <div class="contact-links reveal-group">
-          <p class="contact-q">Le plus simple&nbsp;?</p>
-          <a class="link link-light" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">Mon profil LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="link link-light" href="#projets">Revoir mes projets <span class="arrow" aria-hidden="true">↑</span></a>
-          <p class="contact-note">Agadir, Maroc · Ouvert à un stage ou un emploi</p>
-        </div>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <h2 class="visually-hidden" id="contact-title">Contact</h2>
+    <p class="contact-sentence reveal">Vous recrutez en management, en logistique ou dans le transit&nbsp;? Parlons-en.</p>
+    <figure class="contact-photo reveal">
+      <img src="assets/img/portrait-agadir.jpg" width="1280" height="1280" loading="lazy" alt="Youness Bakas en terrasse face à la mer, sur la côte d'Agadir">
+    </figure>
+    <div class="contact-links">
+      <p class="contact-q reveal">Le plus simple&nbsp;?</p>
+      <a class="link reveal" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">Mon profil LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="link reveal" href="#projets">Revoir mes projets <span class="arrow" aria-hidden="true">↑</span></a>
+      <p class="contact-note reveal">Agadir, Maroc · Ouvert à un stage ou un emploi</p>
+    </div>
+  </section>
+
+  <div class="ribs ribs-thin" aria-hidden="true"></div>
+
+  <footer class="footer">
+    <figure class="footer-photo">
+      <img class="pos-close" src="assets/img/portrait.jpg" width="921" height="1280" loading="lazy" alt="">
+    </figure>
+    <div class="footer-side">
+      <p class="footer-mark">Youness Bakas</p>
+      <nav class="footer-menu" aria-label="Plan du site">
+        <a href="#a-propos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-blocks">
+        <p>Agadir, Maroc<br>Ouvert à un stage ou un emploi</p>
+        <p><a class="link" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></p>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer wrap">
-    <p class="footer-what">Portfolio de Youness Bakas</p>
-    <p class="footer-links"><a href="#top">Haut de page</a><a href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">LinkedIn</a></p>
-    <p class="footer-year">© 2026</p>
+      <p class="footer-legal">© 2026 Youness Bakas · Photos du port&nbsp;: <a href="https://commons.wikimedia.org/wiki/File:Port_of_Agadir_from_Kasbah_of_Agadir_Oufella.jpg" target="_blank" rel="noopener">Abdeaitali</a> et <a href="https://commons.wikimedia.org/wiki/File:Agadir_port_2018.jpg" target="_blank" rel="noopener">Niels Johannes</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
+    </div>
   </footer>
 
   <script src="assets/js/main.js" defer></script>
