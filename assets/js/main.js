@@ -1,42 +1,43 @@
-// Portfolio — Youness Bakas : apparitions, index des projets et vérificateur ISO 6346, sans dépendance.
+// Portfolio — Youness Bakas : menus, filtres et fiches des projets, vérificateur ISO 6346, sans dépendance.
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Entrée du hero
   const hero = document.querySelector('.hero');
-  document.querySelectorAll('.band > *').forEach((el, i) => el.style.setProperty('--i', i));
+  document.querySelectorAll('.hero-intro > *').forEach((el, i) => el.style.setProperty('--i', i));
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('is-loaded')));
 
-  // Le portrait glisse lentement avec le scroll
-  const photo = document.querySelector('.hero-photo');
-  if (!reduce && photo) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (y < window.innerHeight * 1.2) photo.style.translate = '0 ' + (y * 0.12) + 'px';
-        ticking = false;
-      });
-    }, { passive: true });
+  // Menu du hero sur téléphone
+  const heroNav = document.querySelector('.hero-nav');
+  const menuBtn = heroNav && heroNav.querySelector('.menu-btn');
+  if (menuBtn) {
+    const setOpen = (open) => {
+      heroNav.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+    };
+    menuBtn.addEventListener('click', () => setOpen(!heroNav.classList.contains('is-open')));
+    heroNav.querySelectorAll('ul a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && heroNav.classList.contains('is-open')) { setOpen(false); menuBtn.focus(); }
+    });
+    document.addEventListener('click', (e) => { if (!heroNav.contains(e.target)) setOpen(false); });
   }
 
   // Menu fixe : caché en haut de page et en descendant, visible quand on remonte
   const bar = document.getElementById('topbar');
   if (bar) {
     let lastY = window.scrollY;
-    let barTicking = false;
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      if (barTicking) return;
-      barTicking = true;
+      if (ticking) return;
+      ticking = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
         const pastHero = y > hero.offsetHeight * 0.8;
         if (!pastHero || y > lastY + 4) bar.classList.remove('is-shown');
         else if (y < lastY - 4) bar.classList.add('is-shown');
         lastY = y;
-        barTicking = false;
+        ticking = false;
       });
     }, { passive: true });
 
@@ -78,35 +79,28 @@
     reveals.forEach((el) => el.classList.add('is-in'));
   }
 
-  // Index des projets : clic, flèches du clavier, ou survol qui s'attarde
-  const tabs = Array.from(document.querySelectorAll('.index-row'));
-  const panels = Array.from(document.querySelectorAll('.panel'));
-
-  function select(tab, focus) {
-    tabs.forEach((t) => {
-      const on = t === tab;
-      t.setAttribute('aria-selected', on);
-      t.tabIndex = on ? 0 : -1;
+  // Filtres des projets
+  const filterBtns = Array.from(document.querySelectorAll('.filters button'));
+  const cards = Array.from(document.querySelectorAll('.card'));
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const kind = btn.dataset.filter;
+      filterBtns.forEach((b) => b.setAttribute('aria-pressed', b === btn));
+      cards.forEach((card) => { card.hidden = kind !== 'all' && card.dataset.kind !== kind; });
     });
-    panels.forEach((p) => p.classList.toggle('is-on', p.id === tab.getAttribute('aria-controls')));
-    if (focus) tab.focus();
-  }
+  });
 
-  if (tabs.length) {
-    select(tabs[0]);
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => select(tab));
-      let hoverTimer;
-      tab.addEventListener('mouseenter', () => { hoverTimer = setTimeout(() => select(tab), 180); });
-      tab.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
-      tab.addEventListener('keydown', (e) => {
-        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-        if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
-        else if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
-        else if (step) { e.preventDefault(); select(tabs[(i + step + tabs.length) % tabs.length], true); }
-      });
-    });
-  }
+  // Fiches des projets
+  document.querySelectorAll('[data-open]').forEach((btn) => {
+    const sheet = document.getElementById(btn.dataset.open);
+    if (!sheet || typeof sheet.showModal !== 'function') return;
+    btn.addEventListener('click', () => sheet.showModal());
+  });
+  document.querySelectorAll('.sheet').forEach((sheet) => {
+    sheet.querySelectorAll('.close, [data-close]').forEach((el) => el.addEventListener('click', () => sheet.close()));
+    // Un clic sur le fond sombre ferme la fiche
+    sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.close(); });
+  });
 
   // Vérificateur de matricule (norme ISO 6346)
   const form = document.getElementById('check');
