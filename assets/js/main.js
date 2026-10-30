@@ -22,6 +22,43 @@
     }, { passive: true });
   }
 
+  // Menu fixe : caché en haut de page et en descendant, visible quand on remonte
+  const bar = document.getElementById('topbar');
+  if (bar) {
+    let lastY = window.scrollY;
+    let barTicking = false;
+    window.addEventListener('scroll', () => {
+      if (barTicking) return;
+      barTicking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const pastHero = y > hero.offsetHeight * 0.8;
+        if (!pastHero || y > lastY + 4) bar.classList.remove('is-shown');
+        else if (y < lastY - 4) bar.classList.add('is-shown');
+        lastY = y;
+        barTicking = false;
+      });
+    }, { passive: true });
+
+    // La section en cours est soulignée dans le menu
+    const barLinks = Array.from(bar.querySelectorAll('.topbar-nav a'));
+    if ('IntersectionObserver' in window) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          barLinks.forEach((a) => {
+            if (a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      barLinks.forEach((a) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) spy.observe(target);
+      });
+    }
+  }
+
   // Apparitions : délai échelonné à l'intérieur de chaque section
   document.querySelectorAll('section').forEach((scope) => {
     scope.querySelectorAll('.reveal').forEach((el, i) => el.style.setProperty('--i', Math.min(i, 8)));
@@ -41,7 +78,7 @@
     reveals.forEach((el) => el.classList.add('is-in'));
   }
 
-  // Index des projets : survol, clic ou flèches du clavier
+  // Index des projets : clic, flèches du clavier, ou survol qui s'attarde
   const tabs = Array.from(document.querySelectorAll('.index-row'));
   const panels = Array.from(document.querySelectorAll('.panel'));
 
@@ -59,7 +96,9 @@
     select(tabs[0]);
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => select(tab));
-      tab.addEventListener('mouseenter', () => select(tab));
+      let hoverTimer;
+      tab.addEventListener('mouseenter', () => { hoverTimer = setTimeout(() => select(tab), 180); });
+      tab.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
       tab.addEventListener('keydown', (e) => {
         const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
         if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }

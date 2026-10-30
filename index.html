@@ -36,12 +36,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/portrait.jpg">
+  <link rel="preload" as="image" type="image/webp" href="assets/img/portrait.webp" imagesrcset="assets/img/portrait-480.webp 480w, assets/img/portrait.webp 921w" imagesizes="(max-width: 899px) 78vw, 40vw">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
+
+  <div class="topbar" id="topbar">
+    <a class="topbar-name" href="#top">Youness Bakas</a>
+    <nav class="topbar-nav" aria-label="Navigation rapide">
+      <a class="hide-sm" href="#a-propos">À propos</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
   <header class="hero" id="top">
     <div class="band">
@@ -64,7 +75,10 @@
     </div>
 
     <figure class="hero-photo">
-      <img class="pos-face" src="assets/img/portrait.jpg" width="921" height="1280" alt="Portrait de Youness Bakas, chemise blanche, bras croisés, de nuit">
+      <picture>
+        <source type="image/webp" srcset="assets/img/portrait-480.webp 480w, assets/img/portrait.webp 921w" sizes="(max-width: 899px) 78vw, 40vw">
+        <img class="pos-face" src="assets/img/portrait.jpg" width="921" height="1280" fetchpriority="high" alt="Portrait de Youness Bakas, chemise blanche, bras croisés, de nuit">
+      </picture>
     </figure>
 
     <h1 class="hero-name" aria-label="Youness Bakas"><span class="w">Youness</span> <span class="w">Bakas</span></h1>
@@ -77,10 +91,10 @@
       <ul class="about-facts reveal">
         <li>Agadir, Maroc</li>
         <li>DUT Techniques de Management, 2e année</li>
-        <li><a href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">Sur LinkedIn</a></li>
+        <li><a class="tap" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener">Sur LinkedIn</a></li>
       </ul>
       <div class="about-text">
-        <p class="reveal"><img class="about-face pos-face" src="assets/img/portrait.jpg" width="921" height="1280" alt="" loading="lazy"><strong>Youness Bakas</strong>, étudiant en management. En stage chez NEHAME, transitaire à Agadir, je découvre le dédouanement et le freight forwarding de l'intérieur.</p>
+        <p class="reveal"><picture><source type="image/webp" srcset="assets/img/portrait-480.webp"><img class="about-face pos-face" src="assets/img/portrait.jpg" width="921" height="1280" alt="" loading="lazy"></picture><strong>Youness Bakas</strong>, étudiant en management. En stage chez NEHAME, transitaire à Agadir, je découvre le dédouanement et le freight forwarding de l'intérieur.</p>
         <p class="reveal soft">Je suis en 2e année de DUT Techniques de Management à l'École Supérieure de Technologie de Guelmim. Ce qui m'anime&nbsp;: utiliser l'IA et l'automatisation pour rendre la logistique et le transit plus simples et plus fiables. En parallèle, j'ai développé les sites de deux entreprises maritimes d'Agadir, SNTC et Somatime.</p>
       </div>
     </section>
@@ -90,41 +104,16 @@
 
       <div class="index">
         <div class="index-list" role="tablist" aria-label="Projets">
-          <button class="index-row reveal" role="tab" id="tab-1" aria-controls="p-1" aria-selected="true"><span class="ix-name">Vérification des matricules</span><span class="ix-org">NEHAME</span></button>
-          <button class="index-row reveal" role="tab" id="tab-2" aria-controls="p-2" aria-selected="false"><span class="ix-name">Suivi des DUM</span><span class="ix-org">NEHAME</span></button>
-          <button class="index-row reveal" role="tab" id="tab-3" aria-controls="p-3" aria-selected="false"><span class="ix-name">Site SNTC</span><span class="ix-org">SNTC</span></button>
-          <button class="index-row reveal" role="tab" id="tab-4" aria-controls="p-4" aria-selected="false"><span class="ix-name">Site Somatime</span><span class="ix-org">Somatime</span></button>
+          <button class="index-row reveal" role="tab" id="tab-1" aria-controls="p-1" aria-selected="true"><span class="ix-name">Site SNTC</span><span class="ix-org">SNTC</span></button>
+          <button class="index-row reveal" role="tab" id="tab-2" aria-controls="p-2" aria-selected="false"><span class="ix-name">Site Somatime</span><span class="ix-org">Somatime</span></button>
+          <button class="index-row reveal" role="tab" id="tab-3" aria-controls="p-3" aria-selected="false"><span class="ix-name">Vérification des matricules</span><span class="ix-org">NEHAME</span></button>
+          <button class="index-row reveal" role="tab" id="tab-4" aria-controls="p-4" aria-selected="false"><span class="ix-name">Suivi des DUM</span><span class="ix-org">NEHAME</span></button>
           <button class="index-row reveal" role="tab" id="tab-5" aria-controls="p-5" aria-selected="false"><span class="ix-name">Suivi des demandes</span><span class="ix-org">NEHAME</span></button>
         </div>
 
         <div class="index-panels">
           <article class="panel" id="p-1" role="tabpanel" aria-labelledby="tab-1">
-            <figure class="panel-shot"><img src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir vu de l'Agadir Oufella"></figure>
-            <h3>Vérification des matricules conteneurs</h3>
-            <p class="panel-meta">NEHAME · Transit et douane · Automatisation</p>
-            <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
-            <dl class="psd">
-              <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
-              <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
-            </dl>
-            <p class="pending">Capture à venir, avec les données sensibles floutées. Photo&nbsp;: port d'Agadir, Abdeaitali, CC BY-SA 4.0.</p>
-            <a class="link" href="#essai">Essayer la règle de contrôle <span class="arrow" aria-hidden="true">↓</span></a>
-          </article>
-
-          <article class="panel" id="p-2" role="tabpanel" aria-labelledby="tab-2">
-            <figure class="panel-shot"><img class="pos-right" src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Grues du port d'Agadir"></figure>
-            <h3>Tableau de suivi des DUM</h3>
-            <p class="panel-meta">NEHAME · Prototype · Suivi et reporting</p>
-            <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
-            <dl class="psd">
-              <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
-              <div><dt>Solution</dt><dd>Une vue unique des étapes de chaque DUM.</dd></div>
-            </dl>
-            <p class="pending">Capture à venir, avec les données sensibles floutées. Photo&nbsp;: port d'Agadir, Niels Johannes, CC BY-SA 4.0.</p>
-          </article>
-
-          <article class="panel" id="p-3" role="tabpanel" aria-labelledby="tab-3">
-            <figure class="panel-shot"><img class="pos-start" src="assets/img/projet-sntc.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site sntctransit.ma : grues portuaires et navire, titre « Votre partenaire logistique global, sans frontières »"></figure>
+            <figure class="panel-shot"><picture><source type="image/webp" srcset="assets/img/projet-sntc-800.webp 800w, assets/img/projet-sntc.webp 1440w" sizes="(max-width: 899px) 100vw, 50vw"><img class="pos-start" src="assets/img/projet-sntc.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site sntctransit.ma : grues portuaires et navire, titre « Votre partenaire logistique global, sans frontières »"></picture></figure>
             <h3>Site SNTC</h3>
             <p class="panel-meta">Société Nehame de Transit et Consignation · Agadir, Casablanca, Tanger</p>
             <p>Le site de l'entreprise, développé et mis en ligne par moi, de l'hébergement au référencement.</p>
@@ -136,8 +125,8 @@
             <a class="link" href="https://sntctransit.ma" target="_blank" rel="noopener">sntctransit.ma <span class="arrow" aria-hidden="true">↗</span></a>
           </article>
 
-          <article class="panel" id="p-4" role="tabpanel" aria-labelledby="tab-4">
-            <figure class="panel-shot"><img class="pos-start" src="assets/img/projet-somatime.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site somatime.ma : navire au large d'Agadir, titre « Votre partenaire maritime depuis 1958 »"></figure>
+          <article class="panel" id="p-2" role="tabpanel" aria-labelledby="tab-2">
+            <figure class="panel-shot"><picture><source type="image/webp" srcset="assets/img/projet-somatime-800.webp 800w, assets/img/projet-somatime.webp 1440w" sizes="(max-width: 899px) 100vw, 50vw"><img class="pos-start" src="assets/img/projet-somatime.jpg" width="1440" height="1080" loading="lazy" alt="Page d'accueil du site somatime.ma : navire au large d'Agadir, titre « Votre partenaire maritime depuis 1958 »"></picture></figure>
             <h3>Site Somatime</h3>
             <p class="panel-meta">Somatime Agadir · Société maritime</p>
             <p>Refonte complète du site de Somatime, Société Maritime d'Agadir.</p>
@@ -147,8 +136,33 @@
             <a class="link" href="https://somatime.ma" target="_blank" rel="noopener">somatime.ma <span class="arrow" aria-hidden="true">↗</span></a>
           </article>
 
+          <article class="panel" id="p-3" role="tabpanel" aria-labelledby="tab-3">
+            <figure class="panel-shot"><picture><source type="image/webp" srcset="assets/img/port-agadir-oufella-800.webp 800w, assets/img/port-agadir-oufella-1200.webp 1200w" sizes="(max-width: 899px) 100vw, 50vw"><img src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir vu de l'Agadir Oufella"></picture></figure>
+            <h3>Vérification des matricules conteneurs</h3>
+            <p class="panel-meta">NEHAME · Transit et douane · Automatisation</p>
+            <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
+            <dl class="psd">
+              <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
+              <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
+            </dl>
+            <p class="pending">Capture à venir, avec les données sensibles floutées. Photo&nbsp;: port d'Agadir, Abdeaitali, CC BY-SA 4.0.</p>
+            <a class="link" href="#essai">Essayer la règle de contrôle <span class="arrow" aria-hidden="true">↓</span></a>
+          </article>
+
+          <article class="panel" id="p-4" role="tabpanel" aria-labelledby="tab-4">
+            <figure class="panel-shot"><picture><source type="image/webp" srcset="assets/img/port-agadir-quai-800.webp 800w, assets/img/port-agadir-quai.webp 1600w" sizes="(max-width: 899px) 100vw, 50vw"><img class="pos-right" src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Grues du port d'Agadir"></picture></figure>
+            <h3>Tableau de suivi des DUM</h3>
+            <p class="panel-meta">NEHAME · Prototype · Suivi et reporting</p>
+            <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
+            <dl class="psd">
+              <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
+              <div><dt>Solution</dt><dd>Une vue unique des étapes de chaque DUM.</dd></div>
+            </dl>
+            <p class="pending">Capture à venir, avec les données sensibles floutées. Photo&nbsp;: port d'Agadir, Niels Johannes, CC BY-SA 4.0.</p>
+          </article>
+
           <article class="panel" id="p-5" role="tabpanel" aria-labelledby="tab-5">
-            <figure class="panel-shot"><img src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir vu de l'Agadir Oufella"></figure>
+            <figure class="panel-shot"><picture><source type="image/webp" srcset="assets/img/port-agadir-oufella-800.webp 800w, assets/img/port-agadir-oufella-1200.webp 1200w" sizes="(max-width: 899px) 100vw, 50vw"><img src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir vu de l'Agadir Oufella"></picture></figure>
             <h3>Suivi des demandes reçues</h3>
             <p class="panel-meta">NEHAME · Tableaux de bord · Suivi et reporting</p>
             <p>Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
@@ -164,13 +178,16 @@
 
     <section class="trial" id="essai" aria-labelledby="trial-title">
       <figure class="trial-photo reveal">
-        <img src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Quais du port d'Agadir : navires à quai, grues et conteneurs">
+        <picture>
+          <source type="image/webp" srcset="assets/img/port-agadir-quai-800.webp 800w, assets/img/port-agadir-quai.webp 1600w" sizes="(max-width: 899px) 100vw, 50vw">
+          <img src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Quais du port d'Agadir : navires à quai, grues et conteneurs">
+        </picture>
         <figcaption>Quais du port d'Agadir · photo Niels Johannes, CC BY-SA 4.0</figcaption>
       </figure>
       <form class="check" id="check" novalidate>
         <h2 class="check-title reveal" id="trial-title">Un matricule, un contrôle</h2>
         <p class="check-note reveal">Chaque conteneur porte un matricule selon la norme publique ISO 6346&nbsp;: 4 lettres, 6 chiffres et un chiffre de contrôle. Tapez un numéro pour le vérifier.</p>
-        <label class="visually-hidden" for="check-input">Matricule de conteneur</label>
+        <label class="check-label reveal" for="check-input">Matricule de conteneur</label>
         <div class="check-field reveal">
           <input id="check-input" name="matricule" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="14" value="CSQU3054383" aria-describedby="check-result">
           <button class="check-btn" type="submit" aria-label="Vérifier le matricule"><span aria-hidden="true">→</span></button>
@@ -244,7 +261,10 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <figure class="contact-photo reveal">
-        <img src="assets/img/portrait-agadir.jpg" width="1280" height="1280" loading="lazy" alt="Youness Bakas en terrasse face à la mer, sur la côte d'Agadir">
+        <picture>
+          <source type="image/webp" srcset="assets/img/portrait-agadir-640.webp 640w, assets/img/portrait-agadir.webp 1280w" sizes="(max-width: 899px) 72vw, 40vw">
+          <img src="assets/img/portrait-agadir.jpg" width="1280" height="1280" loading="lazy" alt="Youness Bakas en terrasse face à la mer, sur la côte d'Agadir">
+        </picture>
       </figure>
       <div class="contact-text">
         <h2 class="contact-title reveal" id="contact-title">Parlons-en</h2>
