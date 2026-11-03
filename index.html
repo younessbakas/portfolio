@@ -219,7 +219,7 @@
           </div>
         </li>
         <li class="card" data-kind="outil">
-          <picture><source type="image/webp" srcset="assets/img/port-agadir-oufella-800.webp 800w, assets/img/port-agadir-oufella-1200.webp 1200w" sizes="(max-width: 899px) 100vw, 34vw"><img src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir vu de l'Agadir Oufella"></picture>
+          <picture><source type="image/webp" srcset="assets/img/capture-matricule-trouve.webp"><img class="pos-left-bottom" src="assets/img/capture-matricule-trouve.jpg" width="1071" height="627" loading="lazy" alt="Capture floutée : photo d'un conteneur envoyée à l'outil, qui répond « Conteneur trouvé »"></picture>
           <div class="card-body">
             <p class="card-kind">Outil interne · NEHAME</p>
             <h3>Vérification des matricules</h3>
@@ -254,7 +254,7 @@
           </div>
         </li>
       </ul>
-      <p class="work-foot">Captures des outils NEHAME à venir, avec les données sensibles floutées.</p>
+      <p class="work-foot">Captures du suivi des DUM et du suivi des demandes à venir, avec les données sensibles floutées.</p>
     </section>
 
     <dialog class="sheet" id="d-sntc" aria-labelledby="d-sntc-t">
@@ -287,7 +287,21 @@
         <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
         <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
       </dl>
-      <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
+      <div class="sheet-shots">
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-matricule-trouve.webp"><img src="assets/img/capture-matricule-trouve.jpg" width="1071" height="627" loading="lazy" alt="Capture floutée : une photo de conteneur est envoyée, l'outil répond « Conteneur trouvé »"></picture>
+          <figcaption>On envoie la photo d'un conteneur&nbsp;: l'outil lit le matricule et confirme qu'il est dans la liste.</figcaption>
+        </figure>
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-matricule-absent.webp"><img src="assets/img/capture-matricule-absent.jpg" width="900" height="707" loading="lazy" alt="Capture floutée : l'outil répond « Conteneur non disponible dans la liste »"></picture>
+          <figcaption>Si le matricule n'est pas dans la liste, l'équipe est prévenue tout de suite.</figcaption>
+        </figure>
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-workflow-flou.webp"><img src="assets/img/capture-workflow-flou.jpg" width="1741" height="490" loading="lazy" alt="Schéma flouté des étapes de l'automatisation"></picture>
+          <figcaption>Les étapes de l'automatisation, floutées.</figcaption>
+        </figure>
+      </div>
+      <p class="pending">Matricules et détails internes floutés.</p>
       <div class="sheet-actions"><a class="btn" href="#essai" data-close>Essayer la règle de contrôle <span aria-hidden="true">↓</span></a><button class="close" type="button">Fermer</button></div>
     </dialog>
 

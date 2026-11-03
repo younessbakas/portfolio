@@ -81,6 +81,7 @@ button { font: inherit; color: inherit; }
 
 .pos-right { object-position: 80% 50%; }
 .pos-start { object-position: 0 0; }
+.pos-left-bottom { object-position: 88% 50%; }
 
 /* ---------- Pièces communes ---------- */
 
@@ -355,6 +356,9 @@ button { font: inherit; color: inherit; }
 .psd { display: grid; gap: 14px; margin-top: 20px; }
 .psd div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 16px; }
 .psd dt { font-size: var(--step-label); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 0.25em; }
+.sheet-shots { display: grid; gap: 20px; margin-top: 24px; }
+.sheet-shots img { width: 100%; height: auto; }
+.sheet-shots figcaption { margin-top: 8px; font-size: var(--step-note); color: var(--muted); }
 .pending { margin-top: 18px; font-size: var(--step-note); color: var(--muted); }
 .sheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 28px; }
 .close {
