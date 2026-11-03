@@ -221,7 +221,7 @@
         <li class="card" data-kind="outil">
           <picture><source type="image/webp" srcset="assets/img/capture-matricule-trouve.webp"><img class="pos-left-bottom" src="assets/img/capture-matricule-trouve.jpg" width="1071" height="627" loading="lazy" alt="Capture floutée : photo d'un conteneur envoyée à l'outil, qui répond « Conteneur trouvé »"></picture>
           <div class="card-body">
-            <p class="card-kind">Outil interne · NEHAME</p>
+            <p class="card-kind">Outil interne · SNTC</p>
             <h3>Vérification des matricules</h3>
             <p class="card-text">Un outil qui automatise la vérification des matricules de conteneurs.</p>
             <div class="card-actions"><a href="#essai">Essayer <span aria-hidden="true">↓</span></a><button type="button" data-open="d-matricules">Détails</button></div>
@@ -230,16 +230,16 @@
         <li class="card" data-kind="outil">
           <picture><source type="image/webp" srcset="assets/img/port-agadir-quai-800.webp 800w, assets/img/port-agadir-quai.webp 1600w" sizes="(max-width: 899px) 100vw, 34vw"><img class="pos-right" src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Grues du port d'Agadir"></picture>
           <div class="card-body">
-            <p class="card-kind">Prototype · NEHAME</p>
+            <p class="card-kind">Prototype · SNTC</p>
             <h3>Suivi des DUM</h3>
             <p class="card-text">Un tableau qui suit chaque Déclaration Unique des Marchandises, étape par étape.</p>
             <div class="card-actions"><button type="button" data-open="d-dum">Détails</button></div>
           </div>
         </li>
         <li class="card" data-kind="outil">
-          <picture><source type="image/webp" srcset="assets/img/port-agadir-oufella-800.webp 800w, assets/img/port-agadir-oufella-1200.webp 1200w" sizes="(max-width: 899px) 100vw, 34vw"><img class="pos-right" src="assets/img/port-agadir-oufella.jpg" width="1600" height="1200" loading="lazy" alt="Le port d'Agadir et ses quais, vus d'en haut"></picture>
+          <picture><source type="image/webp" srcset="assets/img/capture-demandes-top.webp"><img class="pos-start" src="assets/img/capture-demandes-top.jpg" width="1440" height="900" loading="lazy" alt="Capture floutée du tableau de bord des demandes : indicateurs et graphique par semaine"></picture>
           <div class="card-body">
-            <p class="card-kind">Tableaux de bord · NEHAME</p>
+            <p class="card-kind">Tableaux de bord · SNTC</p>
             <h3>Suivi des demandes</h3>
             <p class="card-text">Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
             <div class="card-actions"><button type="button" data-open="d-demandes">Détails</button></div>
@@ -254,7 +254,7 @@
           </div>
         </li>
       </ul>
-      <p class="work-foot">Captures du suivi des DUM et du suivi des demandes à venir, avec les données sensibles floutées.</p>
+      <p class="work-foot">Capture du suivi des DUM à venir, avec les données sensibles floutées.</p>
     </section>
 
     <dialog class="sheet" id="d-sntc" aria-labelledby="d-sntc-t">
@@ -281,7 +281,7 @@
 
     <dialog class="sheet" id="d-matricules" aria-labelledby="d-matricules-t">
       <h3 id="d-matricules-t">Vérification des matricules conteneurs</h3>
-      <p class="sheet-meta">NEHAME · Transit et douane · Automatisation</p>
+      <p class="sheet-meta">SNTC · Transit et douane · Automatisation</p>
       <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
@@ -307,7 +307,7 @@
 
     <dialog class="sheet" id="d-dum" aria-labelledby="d-dum-t">
       <h3 id="d-dum-t">Tableau de suivi des DUM</h3>
-      <p class="sheet-meta">NEHAME · Prototype · Suivi et reporting</p>
+      <p class="sheet-meta">SNTC · Prototype · Suivi et reporting</p>
       <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
@@ -319,13 +319,23 @@
 
     <dialog class="sheet" id="d-demandes" aria-labelledby="d-demandes-t">
       <h3 id="d-demandes-t">Suivi des demandes reçues</h3>
-      <p class="sheet-meta">NEHAME · Tableaux de bord · Suivi et reporting</p>
+      <p class="sheet-meta">SNTC · Tableaux de bord · Suivi et reporting</p>
       <p>Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Des demandes qui arrivent par plusieurs sites et qu'il ne faut pas perdre.</dd></div>
         <div><dt>Solution</dt><dd>Un suivi centralisé de chaque demande, de l'arrivée au traitement.</dd></div>
       </dl>
-      <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
+      <div class="sheet-shots">
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-demandes-top.webp"><img src="assets/img/capture-demandes-top.jpg" width="1440" height="900" loading="lazy" alt="Capture floutée : vue d'ensemble du tableau de bord, indicateurs, graphique des demandes par semaine, répartition par service et par pays"></picture>
+          <figcaption>Vue d'ensemble&nbsp;: indicateurs, demandes par semaine, import et export, services et pays.</figcaption>
+        </figure>
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-demandes-suivi.webp"><img src="assets/img/capture-demandes-suivi.jpg" width="1440" height="900" loading="lazy" alt="Capture floutée : suivi commercial par statut et fiches contacts"></picture>
+          <figcaption>Suivi commercial&nbsp;: chaque demande a un statut, de «&nbsp;Nouveau&nbsp;» à «&nbsp;Gagné&nbsp;».</figcaption>
+        </figure>
+      </div>
+      <p class="pending">Capture faite avec des données fictives, puis floutée&nbsp;: aucune donnée client n'est visible.</p>
       <div class="sheet-actions"><button class="close" type="button">Fermer</button></div>
     </dialog>
 
