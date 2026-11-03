@@ -1,4 +1,4 @@
-// Portfolio — Youness Bakas : menus, filtres et fiches des projets, vérificateur ISO 6346, sans dépendance.
+// Portfolio — Youness Bakas : menus, filtres et fiches des projets, sans dépendance.
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -101,67 +101,4 @@
     // Un clic sur le fond sombre ferme la fiche
     sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.close(); });
   });
-
-  // Vérificateur de matricule (norme ISO 6346)
-  const form = document.getElementById('check');
-  if (!form) return;
-  const input = form.querySelector('input');
-  const boxes = form.querySelector('.check-boxes');
-  const result = form.querySelector('.check-result');
-
-  // Valeurs des lettres : de 10 à 38, en sautant les multiples de 11
-  const values = {};
-  let v = 10;
-  for (const ch of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
-    if (v % 11 === 0) v++;
-    values[ch] = v++;
-  }
-
-  function check() {
-    const code = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    boxes.innerHTML = '';
-
-    if (!/^[A-Z]{4}\d{7}$/.test(code)) {
-      result.innerHTML = code.length
-        ? 'Format attendu&nbsp;: 4 lettres puis 7 chiffres, par exemple CSQU3054383.'
-        : 'Tapez un matricule de 11 caractères.';
-      return;
-    }
-
-    let sum = 0;
-    const parts = [];
-    for (let i = 0; i < 10; i++) {
-      const ch = code[i];
-      const val = /\d/.test(ch) ? Number(ch) : values[ch];
-      sum += val * Math.pow(2, i);
-      parts.push([ch, val]);
-    }
-    const expected = (sum % 11) % 10;
-    const given = Number(code[10]);
-    const ok = expected === given;
-
-    parts.forEach(([ch, val], i) => {
-      const li = document.createElement('li');
-      li.style.setProperty('--i', i);
-      li.innerHTML = '<b>' + ch + '</b><small>' + val + '</small>';
-      boxes.appendChild(li);
-    });
-    const last = document.createElement('li');
-    last.className = 'is-digit' + (ok ? '' : ' is-wrong');
-    last.style.setProperty('--i', 10);
-    last.innerHTML = '<b>' + given + '</b><small>' + (ok ? 'ok' : expected) + '</small>';
-    boxes.appendChild(last);
-
-    const catNote = 'UJZ'.includes(code[3]) ? '' : ' La 4e lettre devrait être U, J ou Z.';
-    result.innerHTML = ok
-      ? '<strong>Matricule valide.</strong> Somme pondérée ' + sum + ', reste ' + (sum % 11) + '&nbsp;: le chiffre de contrôle est bien ' + expected + '.' + catNote
-      : '<strong>Matricule invalide.</strong> Le chiffre de contrôle devrait être ' + expected + ', pas ' + given + '.' + catNote;
-  }
-
-  form.addEventListener('submit', (e) => { e.preventDefault(); check(); });
-  input.addEventListener('input', () => {
-    const code = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    if (code.length >= 11 || code.length === 0) check();
-  });
-  check();
 })();

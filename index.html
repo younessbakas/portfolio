@@ -141,6 +141,8 @@
             <li><span class="tile" style="--c:#4a70c2">IA</span>Intelligence artificielle</li>
             <li><span class="tile" style="--c:#1a3260">›_</span>Prompt engineering</li>
             <li><span class="tile" style="--c:#00618a">SQL</span>SQL</li>
+            <li><span class="tile" style="--c:#5b3cc4">&lt;/&gt;</span>Vibe coding</li>
+            <li><span class="tile" style="--c:#b4441c">Aa</span>Design</li>
           </ul>
         </div>
         <div class="skill-group reveal">
@@ -214,26 +216,17 @@
           <div class="card-body">
             <p class="card-kind">Site web · Somatime</p>
             <h3>Site Somatime</h3>
-            <p class="card-text">Refonte complète du site de la Société Maritime d'Agadir.</p>
+            <p class="card-text">Le site de la Société Maritime d'Agadir, refait de zéro et développé par moi.</p>
             <div class="card-actions"><a href="https://somatime.ma" target="_blank" rel="noopener">Le site <span aria-hidden="true">↗</span></a><button type="button" data-open="d-somatime">Détails</button></div>
           </div>
         </li>
         <li class="card" data-kind="outil">
-          <picture><source type="image/webp" srcset="assets/img/capture-matricule-trouve.webp"><img class="pos-left-bottom" src="assets/img/capture-matricule-trouve.jpg" width="1071" height="627" loading="lazy" alt="Capture floutée : photo d'un conteneur envoyée à l'outil, qui répond « Conteneur trouvé »"></picture>
+          <picture><source type="image/webp" srcset="assets/img/capture-workflow-carte.webp"><img src="assets/img/capture-workflow-carte.jpg" width="960" height="720" loading="lazy" alt="Schéma flouté de l'automatisation n8n de vérification des matricules"></picture>
           <div class="card-body">
             <p class="card-kind">Outil interne · SNTC</p>
             <h3>Vérification des matricules</h3>
-            <p class="card-text">Un outil qui automatise la vérification des matricules de conteneurs.</p>
-            <div class="card-actions"><a href="#essai">Essayer <span aria-hidden="true">↓</span></a><button type="button" data-open="d-matricules">Détails</button></div>
-          </div>
-        </li>
-        <li class="card" data-kind="outil">
-          <picture><source type="image/webp" srcset="assets/img/port-agadir-quai-800.webp 800w, assets/img/port-agadir-quai.webp 1600w" sizes="(max-width: 899px) 100vw, 34vw"><img class="pos-right" src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Grues du port d'Agadir"></picture>
-          <div class="card-body">
-            <p class="card-kind">Prototype · SNTC</p>
-            <h3>Suivi des DUM</h3>
-            <p class="card-text">Un tableau qui suit chaque Déclaration Unique des Marchandises, étape par étape.</p>
-            <div class="card-actions"><button type="button" data-open="d-dum">Détails</button></div>
+            <p class="card-text">Une automatisation réalisée avec n8n qui vérifie les matricules de conteneurs.</p>
+            <div class="card-actions"><button type="button" data-open="d-matricules">Détails</button></div>
           </div>
         </li>
         <li class="card" data-kind="outil">
@@ -245,16 +238,7 @@
             <div class="card-actions"><button type="button" data-open="d-demandes">Détails</button></div>
           </div>
         </li>
-        <li class="card card-try" data-kind="outil">
-          <div class="card-body">
-            <p class="card-kind">À essayer ici</p>
-            <h3>Un matricule, un contrôle</h3>
-            <p class="card-text">Tapez un numéro de conteneur et voyez le calcul du chiffre de contrôle.</p>
-            <div class="card-actions"><a href="#essai">Ouvrir le vérificateur <span aria-hidden="true">↓</span></a></div>
-          </div>
-        </li>
       </ul>
-      <p class="work-foot">Capture du suivi des DUM à venir, avec les données sensibles floutées.</p>
     </section>
 
     <dialog class="sheet" id="d-sntc" aria-labelledby="d-sntc-t">
@@ -272,9 +256,9 @@
     <dialog class="sheet" id="d-somatime" aria-labelledby="d-somatime-t">
       <h3 id="d-somatime-t">Site Somatime</h3>
       <p class="sheet-meta">Somatime Agadir · Société maritime</p>
-      <p>Refonte complète du site de Somatime, Société Maritime d'Agadir.</p>
+      <p>Le site de Somatime, Société Maritime d'Agadir, refait entièrement de zéro.</p>
       <dl class="psd">
-        <div><dt>Mon rôle</dt><dd>Refonte et développement du site, réalisés par moi.</dd></div>
+        <div><dt>Mon rôle</dt><dd>Nouveau site conçu et développé par moi, depuis zéro.</dd></div>
       </dl>
       <div class="sheet-actions"><a class="btn" href="https://somatime.ma" target="_blank" rel="noopener">somatime.ma <span aria-hidden="true">↗</span></a><button class="close" type="button">Fermer</button></div>
     </dialog>
@@ -282,12 +266,17 @@
     <dialog class="sheet" id="d-matricules" aria-labelledby="d-matricules-t">
       <h3 id="d-matricules-t">Vérification des matricules conteneurs</h3>
       <p class="sheet-meta">SNTC · Transit et douane · Automatisation</p>
-      <p>Un outil interne qui automatise la vérification des matricules de conteneurs.</p>
+      <p>Un outil interne, réalisé avec n8n, qui automatise la vérification des matricules de conteneurs.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
         <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
+        <div><dt>Outil</dt><dd>n8n</dd></div>
       </dl>
       <div class="sheet-shots">
+        <figure>
+          <picture><source type="image/webp" srcset="assets/img/capture-workflow-flou.webp"><img src="assets/img/capture-workflow-flou.jpg" width="1741" height="490" loading="lazy" alt="Schéma flouté des étapes de l'automatisation"></picture>
+          <figcaption>Les étapes de l'automatisation dans n8n, floutées.</figcaption>
+        </figure>
         <figure>
           <picture><source type="image/webp" srcset="assets/img/capture-matricule-trouve.webp"><img src="assets/img/capture-matricule-trouve.jpg" width="1071" height="627" loading="lazy" alt="Capture floutée : une photo de conteneur est envoyée, l'outil répond « Conteneur trouvé »"></picture>
           <figcaption>On envoie la photo d'un conteneur&nbsp;: l'outil lit le matricule et confirme qu'il est dans la liste.</figcaption>
@@ -296,24 +285,8 @@
           <picture><source type="image/webp" srcset="assets/img/capture-matricule-absent.webp"><img src="assets/img/capture-matricule-absent.jpg" width="900" height="707" loading="lazy" alt="Capture floutée : l'outil répond « Conteneur non disponible dans la liste »"></picture>
           <figcaption>Si le matricule n'est pas dans la liste, l'équipe est prévenue tout de suite.</figcaption>
         </figure>
-        <figure>
-          <picture><source type="image/webp" srcset="assets/img/capture-workflow-flou.webp"><img src="assets/img/capture-workflow-flou.jpg" width="1741" height="490" loading="lazy" alt="Schéma flouté des étapes de l'automatisation"></picture>
-          <figcaption>Les étapes de l'automatisation, floutées.</figcaption>
-        </figure>
       </div>
       <p class="pending">Matricules et détails internes floutés.</p>
-      <div class="sheet-actions"><a class="btn" href="#essai" data-close>Essayer la règle de contrôle <span aria-hidden="true">↓</span></a><button class="close" type="button">Fermer</button></div>
-    </dialog>
-
-    <dialog class="sheet" id="d-dum" aria-labelledby="d-dum-t">
-      <h3 id="d-dum-t">Tableau de suivi des DUM</h3>
-      <p class="sheet-meta">SNTC · Prototype · Suivi et reporting</p>
-      <p>Un tableau qui suit, étape par étape, chaque Déclaration Unique des Marchandises.</p>
-      <dl class="psd">
-        <div><dt>Problème</dt><dd>Savoir où en est une déclaration demande de recouper plusieurs sources.</dd></div>
-        <div><dt>Solution</dt><dd>Une vue unique des étapes de chaque DUM.</dd></div>
-      </dl>
-      <p class="pending">Capture à venir, avec les données sensibles floutées.</p>
       <div class="sheet-actions"><button class="close" type="button">Fermer</button></div>
     </dialog>
 
@@ -338,30 +311,6 @@
       <p class="pending">Capture faite avec des données fictives, puis floutée&nbsp;: aucune donnée client n'est visible.</p>
       <div class="sheet-actions"><button class="close" type="button">Fermer</button></div>
     </dialog>
-
-    <section class="block trial" id="essai" aria-labelledby="trial-title">
-      <h2 class="boxed reveal" id="trial-title">Essai</h2>
-      <div class="trial-grid">
-        <figure class="trial-photo reveal">
-          <picture>
-            <source type="image/webp" srcset="assets/img/port-agadir-quai-800.webp 800w, assets/img/port-agadir-quai.webp 1600w" sizes="(max-width: 899px) 100vw, 45vw">
-            <img src="assets/img/port-agadir-quai.jpg" width="1600" height="1069" loading="lazy" alt="Quais du port d'Agadir : navires à quai, grues et conteneurs">
-          </picture>
-          <figcaption>Quais du port d'Agadir · photo Niels Johannes, CC BY-SA 4.0</figcaption>
-        </figure>
-        <form class="check" id="check" novalidate>
-          <h3 class="check-title reveal">Un matricule, un contrôle</h3>
-          <p class="check-note reveal">Chaque conteneur porte un matricule selon la norme publique ISO 6346&nbsp;: 4 lettres, 6 chiffres et un chiffre de contrôle. Tapez un numéro pour le vérifier.</p>
-          <label class="check-label reveal" for="check-input">Matricule de conteneur</label>
-          <div class="check-field reveal">
-            <input id="check-input" name="matricule" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="14" value="CSQU3054383" aria-describedby="check-result">
-            <button class="check-btn" type="submit" aria-label="Vérifier le matricule"><span aria-hidden="true">→</span></button>
-          </div>
-          <ol class="check-boxes" aria-hidden="true"></ol>
-          <p class="check-result" id="check-result" role="status" aria-live="polite">Le chiffre de contrôle se calcule à partir des 10 premiers caractères.</p>
-        </form>
-      </div>
-    </section>
 
     <section class="block path" id="parcours" aria-labelledby="path-title">
       <svg class="zigzag" aria-hidden="true"><use href="#i-zigzag"/></svg>
@@ -406,7 +355,7 @@
     <a class="to-top" href="#top"><span aria-hidden="true">︿</span>Haut de page</a>
     <a class="icon-btn icon-btn-dark" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener" aria-label="LinkedIn de Youness Bakas"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
     <p>© 2026 Youness Bakas</p>
-    <p class="credits">Photos du port&nbsp;: <a href="https://commons.wikimedia.org/wiki/File:Agadir_port_2018.jpg" target="_blank" rel="noopener">N. Johannes</a>, <a href="https://commons.wikimedia.org/wiki/File:Port_of_Agadir_from_Kasbah_of_Agadir_Oufella.jpg" target="_blank" rel="noopener">Abdeaitali</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+    <p class="credits">Photo du port&nbsp;: <a href="https://commons.wikimedia.org/wiki/File:Port_of_Agadir_from_Kasbah_of_Agadir_Oufella.jpg" target="_blank" rel="noopener">Abdeaitali</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
   </footer>
 
   <script src="assets/js/main.js" defer></script>

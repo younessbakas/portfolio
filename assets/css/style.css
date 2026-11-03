@@ -81,7 +81,6 @@ button { font: inherit; color: inherit; }
 
 .pos-right { object-position: 80% 50%; }
 .pos-start { object-position: 0 0; }
-.pos-left-bottom { object-position: 88% 50%; }
 
 /* ---------- Pièces communes ---------- */
 
@@ -296,7 +295,7 @@ button { font: inherit; color: inherit; }
 .filters button:hover { color: var(--on-navy); }
 .filters button[aria-pressed="true"] { color: var(--on-navy); border-bottom-color: var(--accent-ink); }
 
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .card { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--navy-2); }
 .card[hidden] { display: none; }
 .card img {
@@ -335,9 +334,6 @@ button { font: inherit; color: inherit; }
 .card-actions > :last-child { border-right: 2px solid var(--on-navy); }
 .card-actions a:hover, .card-actions button:hover { color: var(--accent-ink); }
 
-.card-try { background: var(--navy-2); }
-.card-try .card-body { background: none; justify-content: center; }
-.card-try .card-text, .card-try .card-actions { max-height: none; opacity: 1; transform: none; }
 
 .work-foot { padding: 20px var(--margin); text-align: center; font-size: var(--step-note); color: var(--on-navy-muted); }
 
@@ -367,66 +363,6 @@ button { font: inherit; color: inherit; }
   font-size: var(--step-label); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
 }
 @keyframes sheet-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-
-/* ---------- Essai ISO 6346 ---------- */
-
-.trial-grid {
-  max-width: 1120px; margin: 20px auto 0;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 64px);
-  align-items: center; text-align: left;
-}
-.trial-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.trial-photo figcaption { margin-top: 10px; font-size: var(--step-label); color: var(--muted); }
-
-.check { display: grid; gap: 16px; }
-.check-title { font-family: var(--display); font-weight: 800; font-size: var(--step-title); line-height: 1.15; }
-.check-note { color: var(--muted); }
-.check-label { font-size: var(--step-label); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: -8px; }
-.check-field { position: relative; }
-.check-field input {
-  width: 100%; height: 64px;
-  padding: 0 70px 0 18px;
-  border: 2px solid var(--ink); border-radius: 0;
-  background: #fff; color: var(--ink);
-  font: 600 var(--step-lead)/1 var(--text);
-  letter-spacing: 0.1em; text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
-}
-.check-field input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-.check-btn {
-  position: absolute; right: 8px; top: 8px;
-  width: 48px; height: 48px; border: 0; border-radius: 0;
-  background: var(--navy); color: var(--on-navy);
-  font-size: var(--step-lead); cursor: pointer;
-  transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
-}
-.check-btn:hover { background: var(--accent-strong); }
-.check-btn:active { transform: scale(0.94); }
-
-.check-boxes {
-  display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 4px;
-  font-variant-numeric: tabular-nums;
-}
-.check-boxes:empty { display: none; }
-.check-boxes li {
-  display: grid; justify-items: center; gap: 2px;
-  padding: 10px 4px 8px;
-  background: #fff;
-  animation: box-in 420ms var(--ease-out) both;
-  animation-delay: calc(var(--i, 0) * 35ms);
-}
-.check-boxes b { font-weight: 700; font-size: var(--step-body); line-height: 1.2; }
-.check-boxes small { font-size: var(--step-label); color: var(--muted); }
-.check-boxes li.is-digit { background: var(--navy); color: var(--on-navy); }
-.check-boxes li.is-digit small { color: var(--on-navy); }
-.check-boxes li.is-wrong { background: var(--error); }
-.check-result { font-size: var(--step-note); color: var(--muted); }
-.check-result strong { font-weight: 700; color: var(--ink); }
-
-@keyframes box-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
 
 /* ---------- Parcours ---------- */
 
@@ -550,7 +486,7 @@ button { font: inherit; color: inherit; }
 
   .feature-inner { margin-left: 0; }
 
-  .trial-grid, .path-cols, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .path-cols, .contact-grid { grid-template-columns: minmax(0, 1fr); }
   .contact-photo { max-width: 360px; }
   .extras div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
@@ -565,8 +501,7 @@ button { font: inherit; color: inherit; }
   .card-actions { margin-left: -16px; }
   .card-actions > :first-child { border-left-color: transparent; }
   .card-actions > :last-child { border-right: 0; }
-  .card-try .card-body { height: 100%; justify-content: center; }
-}
+  }
 
 @media (max-width: 640px) {
   .grid { grid-template-columns: minmax(0, 1fr); gap: 2px; }
@@ -574,9 +509,6 @@ button { font: inherit; color: inherit; }
   .filters button { padding: 0 8px; letter-spacing: 0.08em; }
   .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 8px; }
   .psd div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-  .check-boxes { gap: 3px; }
-  .check-boxes li { padding: 8px 2px 6px; }
-  .check-boxes b { font-size: 0.8125rem; }
   .boxed { padding: 10px 20px; }
   .topbar .topbar-name, .topbar .hide-sm { display: none; }
   .topbar-nav { width: 100%; justify-content: space-between; gap: 8px; }
