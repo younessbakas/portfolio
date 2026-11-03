@@ -236,11 +236,12 @@ button { font: inherit; color: inherit; }
 .about .zigzag { margin-top: 56px; }
 
 .services {
-  max-width: 980px; margin: 56px auto 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px;
+  max-width: 880px; margin: 56px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 64px;
   text-align: left;
 }
-.service { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 6px 16px; align-items: center; }
+.service { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 6px 16px; align-items: start; align-content: start; }
+.service h3 { padding-top: 11px; }
 .service-icon { width: 44px; height: 44px; color: var(--navy); grid-row: span 2; align-self: start; }
 .service h3 { font-size: var(--step-small); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 .service p { grid-column: 2; font-size: var(--step-body); color: var(--muted); line-height: 1.6; }
