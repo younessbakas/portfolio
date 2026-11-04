@@ -42,7 +42,7 @@
     }, { passive: true });
 
     // La section en cours est soulignée dans le menu
-    const barLinks = Array.from(bar.querySelectorAll('.topbar-nav a'));
+    const barLinks = Array.from(bar.querySelectorAll('.topbar-nav a[href^="#"]'));
     if ('IntersectionObserver' in window) {
       const spy = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {

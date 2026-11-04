@@ -160,6 +160,15 @@ button { font: inherit; color: inherit; }
   padding: 28px var(--margin) 56px;
   width: 50%;
 }
+.hero-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.lang {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 52px; padding: 0 14px;
+  border: 2px solid var(--ink); color: var(--ink); text-decoration: none;
+  font-size: var(--step-small); font-weight: 700; letter-spacing: 0.14em;
+  transition: background-color var(--t-hover) ease, color var(--t-hover) ease;
+}
+.lang:hover { background: var(--ink); color: var(--paper-hi); }
+@media (min-width: 900px) { .only-sm { display: none; } }
 .mark { display: inline-flex; width: 48px; height: 48px; color: var(--ink); }
 .mark svg { width: 100%; height: 100%; }
 .hero-intro { align-self: center; display: grid; gap: 14px; justify-items: start; padding-left: clamp(0px, 6vw, 96px); }
@@ -465,7 +474,7 @@ button { font: inherit; color: inherit; }
   }
   .hero-text { grid-row: 2; width: 100%; padding: 8px var(--margin) 56px; grid-template-rows: auto; }
   .hero-intro { padding-left: 0; }
-  .mark { display: none; }
+  .hero-top { display: none; }
 
   .hero-nav { top: 16px; right: var(--margin); left: var(--margin); display: flex; justify-content: flex-end; }
   .hero-nav ul { flex-wrap: wrap; justify-content: flex-end; }
