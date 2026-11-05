@@ -377,6 +377,19 @@ button { font: inherit; color: inherit; }
 }
 @keyframes sheet-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
+/* ---------- À compléter, résultats, missions ---------- */
+
+/* Marqueur visible tant qu'une information manque */
+.todo { background: #fff1b8; color: #4a3800; padding: 1px 6px; font-weight: 600; }
+.hero-avail { font-weight: 600; }
+.card-result { font-size: var(--step-small); font-weight: 600; color: var(--accent-ink); }
+.card-result .todo, .psd .todo { font-size: var(--step-small); }
+.hero-social { align-items: center; flex-wrap: wrap; }
+.missions { display: grid; gap: 6px; margin: 6px 0 4px; padding-left: 18px; list-style: disc; color: var(--muted); font-size: var(--step-body); line-height: 1.55; }
+.text-link { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+.path-col > .group-title + .timeline { margin-bottom: 8px; }
+.path-col .timeline + .group-title { margin-top: 40px; }
+
 /* ---------- Parcours ---------- */
 
 .path-cols {
@@ -385,8 +398,8 @@ button { font: inherit; color: inherit; }
   text-align: left;
 }
 .timeline { display: grid; gap: 28px; border-left: 2px solid var(--ink); padding-left: 26px; }
-.timeline li { position: relative; display: grid; gap: 4px; }
-.timeline li::before {
+.timeline > li { position: relative; display: grid; gap: 4px; }
+.timeline > li::before {
   content: ""; position: absolute; left: -33px; top: 0.45em;
   width: 12px; height: 12px; background: var(--navy); border: 2px solid var(--paper-hi);
 }
