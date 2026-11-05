@@ -75,7 +75,7 @@
       <div class="hero-intro">
         <p class="hello">Hi, I am</p>
         <h1 class="hero-name">Youness Bakas</h1>
-        <p class="hero-role">Management profile · Digital tools and AI</p>
+        <p class="hero-role">Management profile · Digital, AI and data</p>
         <p class="hero-status">I use digital tools and AI to organise, track and improve work. Available for an internship or a job.</p>
         <ul class="hero-social">
           <li><a class="icon-btn" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener" aria-label="Youness Bakas on LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
@@ -115,7 +115,7 @@
 
     <section class="block about" id="about" aria-labelledby="about-title">
       <h2 class="boxed reveal" id="about-title">About</h2>
-      <p class="lead reveal">Second-year student in a two-year management degree (DUT Techniques de Management) at the École Supérieure de Technologie de Guelmim. My profile: a future manager who relies on digital tools and AI to organise, track and improve the work of teams.</p>
+      <p class="lead reveal">Second-year student in a two-year management degree (DUT Techniques de Management) at the École Supérieure de Technologie de Guelmim. My profile: a future manager who relies on digital tools and AI to organise, track and improve the work of teams. My goal: to grow in data analysis too, where I already have the basics.</p>
       <a class="bar-link reveal" href="#background">My background</a>
       <svg class="zigzag reveal" aria-hidden="true"><use href="#i-zigzag"/></svg>
 
@@ -127,8 +127,8 @@
         </li>
         <li class="service reveal">
           <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M11 27v-6M17 27V15M23 27v-9M29 27V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <h3>Steering and tracking</h3>
-          <p>Dashboards to track requests and their status. Stock tracking and reports in Excel at Danialand.</p>
+          <h3>Steering and data</h3>
+          <p>Dashboards to track requests and their status, stock reports in Excel at Danialand. I have the basics of data analysis and keep improving.</p>
         </li>
         <li class="service reveal">
           <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="9" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="31" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="31" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 18.5l14-7M13 21.5l14 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
@@ -155,6 +155,7 @@
             <li><span class="tile" style="--c:#4a70c2">AI</span>Artificial intelligence</li>
             <li><span class="tile" style="--c:#0f7b6c">⟳</span>AI automation</li>
             <li><span class="tile" style="--c:#1a3260">›_</span>Prompt engineering</li>
+            <li><span class="tile" style="--c:#2f6f4f">∑</span>Data analysis<small>Basics, improving</small></li>
             <li><span class="tile" style="--c:#00618a">SQL</span>SQL</li>
             <li><span class="tile" style="--c:#5b3cc4">&lt;/&gt;</span>Vibe coding</li>
             <li><span class="tile" style="--c:#b4441c">Aa</span>Design</li>
@@ -237,7 +238,7 @@
           <div class="card-body">
             <p class="card-kind">Internal tool · SNTC</p>
             <h3>Container number check</h3>
-            <p class="card-text">An n8n automation that checks container numbers, with no manual checking.</p>
+            <p class="card-text">An n8n automation that reads the container number from a photo, checks it and updates the Google Sheets table.</p>
             <div class="card-actions"><button type="button" data-open="d-matricules">Details</button></div>
           </div>
         </li>
@@ -278,12 +279,19 @@
     <dialog class="sheet" id="d-matricules" aria-labelledby="d-matricules-t">
       <h3 id="d-matricules-t">Container number check</h3>
       <p class="sheet-meta">SNTC · Automation · n8n</p>
-      <p>An internal tool, built with n8n, that automates the checking of container numbers.</p>
+      <p>An internal tool, built with n8n, that checks container numbers and keeps a Google Sheets table up to date.</p>
       <dl class="psd">
         <div><dt>Problem</dt><dd>Checking each container number by hand takes time and lets mistakes through.</dd></div>
-        <div><dt>Solution</dt><dd>An automatic check, built into the team's daily work.</dd></div>
-        <div><dt>Tool</dt><dd>n8n</dd></div>
+        <div><dt>Solution</dt><dd>An automatic check, built into the team's daily work, that keeps a record of every check.</dd></div>
+        <div><dt>Tools</dt><dd>n8n, Google Sheets, AI image reading</dd></div>
       </dl>
+      <ol class="steps">
+        <li>The team sends a photo of the container by message.</li>
+        <li>AI reads the container number from the photo.</li>
+        <li>The check digit is verified against the ISO 6346 standard.</li>
+        <li>The number is looked up in the container list, on Google Sheets.</li>
+        <li>Found: a confirmation, and the row turns green in the table. Missing: an alert, and the number is added to the failures table.</li>
+      </ol>
       <div class="sheet-shots">
         <figure>
           <picture><source type="image/webp" srcset="../assets/img/capture-workflow-flou.webp"><img src="../assets/img/capture-workflow-flou.jpg" width="1741" height="490" loading="lazy" alt="Blurred diagram of the automation steps"></picture>

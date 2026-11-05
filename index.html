@@ -74,7 +74,7 @@
       <div class="hero-intro">
         <p class="hello">Bonjour, je suis</p>
         <h1 class="hero-name">Youness Bakas</h1>
-        <p class="hero-role">Profil management · Outils digitaux et IA</p>
+        <p class="hero-role">Profil management · Digital, IA et données</p>
         <p class="hero-status">J'utilise le digital et l'IA pour organiser, suivre et améliorer le travail. Disponible pour un stage ou un emploi.</p>
         <ul class="hero-social">
           <li><a class="icon-btn" href="https://www.linkedin.com/in/bakas-youness" target="_blank" rel="noopener" aria-label="LinkedIn de Youness Bakas"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
@@ -114,7 +114,7 @@
 
     <section class="block about" id="a-propos" aria-labelledby="about-title">
       <h2 class="boxed reveal" id="about-title">À propos</h2>
-      <p class="lead reveal">Étudiant en 2e année de DUT Techniques de Management à l'École Supérieure de Technologie de Guelmim. Mon profil&nbsp;: un futur manager qui s'appuie sur les outils digitaux et l'IA pour organiser, suivre et améliorer le travail des équipes.</p>
+      <p class="lead reveal">Étudiant en 2e année de DUT Techniques de Management à l'École Supérieure de Technologie de Guelmim. Mon profil&nbsp;: un futur manager qui s'appuie sur les outils digitaux et l'IA pour organiser, suivre et améliorer le travail des équipes. Mon objectif&nbsp;: progresser aussi en analyse de données, dont j'ai déjà les bases.</p>
       <a class="bar-link reveal" href="#parcours">Mon parcours</a>
       <svg class="zigzag reveal" aria-hidden="true"><use href="#i-zigzag"/></svg>
 
@@ -126,8 +126,8 @@
         </li>
         <li class="service reveal">
           <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M11 27v-6M17 27V15M23 27v-9M29 27V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <h3>Pilotage et suivi</h3>
-          <p>Tableaux de bord pour suivre les demandes et leurs statuts. Suivi des stocks et rapports sur Excel chez Danialand.</p>
+          <h3>Pilotage et données</h3>
+          <p>Tableaux de bord pour suivre les demandes et leurs statuts, rapports de stock sur Excel chez Danialand. J'ai les bases de l'analyse de données et je continue à progresser.</p>
         </li>
         <li class="service reveal">
           <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="9" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="31" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="31" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 18.5l14-7M13 21.5l14 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
@@ -154,6 +154,7 @@
             <li><span class="tile" style="--c:#4a70c2">IA</span>Intelligence artificielle</li>
             <li><span class="tile" style="--c:#0f7b6c">⟳</span>Automatisation IA</li>
             <li><span class="tile" style="--c:#1a3260">›_</span>Prompt engineering</li>
+            <li><span class="tile" style="--c:#2f6f4f">∑</span>Analyse de données<small>Bases, en progression</small></li>
             <li><span class="tile" style="--c:#00618a">SQL</span>SQL</li>
             <li><span class="tile" style="--c:#5b3cc4">&lt;/&gt;</span>Vibe coding</li>
             <li><span class="tile" style="--c:#b4441c">Aa</span>Design</li>
@@ -236,7 +237,7 @@
           <div class="card-body">
             <p class="card-kind">Outil interne · SNTC</p>
             <h3>Vérification des matricules</h3>
-            <p class="card-text">Une automatisation n8n qui vérifie les matricules de conteneurs, sans contrôle à la main.</p>
+            <p class="card-text">Une automatisation n8n qui lit le matricule sur une photo, le vérifie et met à jour le tableau Google Sheets.</p>
             <div class="card-actions"><button type="button" data-open="d-matricules">Détails</button></div>
           </div>
         </li>
@@ -277,12 +278,19 @@
     <dialog class="sheet" id="d-matricules" aria-labelledby="d-matricules-t">
       <h3 id="d-matricules-t">Vérification des matricules conteneurs</h3>
       <p class="sheet-meta">SNTC · Automatisation · n8n</p>
-      <p>Un outil interne, réalisé avec n8n, qui automatise la vérification des matricules de conteneurs.</p>
+      <p>Un outil interne, réalisé avec n8n, qui vérifie les matricules de conteneurs et tient à jour un tableau Google Sheets.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Contrôler chaque matricule à la main prend du temps et laisse passer des erreurs.</dd></div>
-        <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe.</dd></div>
-        <div><dt>Outil</dt><dd>n8n</dd></div>
+        <div><dt>Solution</dt><dd>Une vérification automatique, intégrée au travail de l'équipe, qui garde une trace de chaque contrôle.</dd></div>
+        <div><dt>Outils</dt><dd>n8n, Google Sheets, IA de lecture d'image</dd></div>
       </dl>
+      <ol class="steps">
+        <li>L'équipe envoie la photo du conteneur par message.</li>
+        <li>L'IA lit le matricule sur la photo.</li>
+        <li>Le chiffre de contrôle est vérifié selon la norme ISO 6346.</li>
+        <li>Le matricule est cherché dans la liste des conteneurs, sur Google Sheets.</li>
+        <li>Trouvé&nbsp;: confirmation, et la ligne passe en vert dans le tableau. Absent&nbsp;: alerte, et le matricule est ajouté au tableau des échecs.</li>
+      </ol>
       <div class="sheet-shots">
         <figure>
           <picture><source type="image/webp" srcset="assets/img/capture-workflow-flou.webp"><img src="assets/img/capture-workflow-flou.jpg" width="1741" height="490" loading="lazy" alt="Schéma flouté des étapes de l'automatisation"></picture>
