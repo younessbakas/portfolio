@@ -328,11 +328,14 @@
     <dialog class="sheet" id="d-demandes" aria-labelledby="d-demandes-t">
       <h3 id="d-demandes-t">Tracking incoming requests</h3>
       <p class="sheet-meta">SNTC · Dashboards · Tracking and reporting</p>
-      <p>Dashboards to track the requests received through the websites.</p>
+      <p>A private space where managers review and handle the requests sent through the website, built on a database I designed and set up.</p>
       <dl class="psd">
         <div><dt>Problem</dt><dd>Requests arrive through several websites and must not be lost.</dd></div>
-        <div><dt>Solution</dt><dd>Central tracking of every request, from arrival to processing.</dd></div>
-        <div><dt>My role</dt><dd>Set up the tracking of customer requests.</dd></div>
+        <div><dt>Solution</dt><dd>The website form saves each request to the database and notifies the team by email. Managers then follow it in a login-protected dashboard: status, notes, charts by day, week or month.</dd></div>
+        <div><dt>Database</dt><dd>Designed in SQL with phpMyAdmin: 5 tables (requests, managers, settings, and two security tables). Each request keeps its reference, date, status, an internal note and the name of whoever last changed it. The history from the previous tool, Web3Forms, was migrated with SQL import scripts.</dd></div>
+        <div><dt>Security</dt><dd>Hashed passwords, a per-IP limit on submissions against spam, and lockout after repeated failed logins.</dd></div>
+        <div><dt>Tools</dt><dd>MySQL, SQL, phpMyAdmin, PHP, cPanel</dd></div>
+        <div><dt>My role</dt><dd>Designed the database, built the managers' space and put it online.</dd></div>
       </dl>
       <div class="sheet-shots">
         <figure>

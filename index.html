@@ -327,11 +327,14 @@
     <dialog class="sheet" id="d-demandes" aria-labelledby="d-demandes-t">
       <h3 id="d-demandes-t">Suivi des demandes reçues</h3>
       <p class="sheet-meta">SNTC · Tableaux de bord · Suivi et reporting</p>
-      <p>Des tableaux de bord pour suivre les demandes reçues depuis les sites web.</p>
+      <p>Un espace privé où les responsables consultent et traitent les demandes du site, appuyé sur une base de données que j'ai conçue et mise en place.</p>
       <dl class="psd">
         <div><dt>Problème</dt><dd>Des demandes qui arrivent par plusieurs sites et qu'il ne faut pas perdre.</dd></div>
-        <div><dt>Solution</dt><dd>Un suivi centralisé de chaque demande, de l'arrivée au traitement.</dd></div>
-        <div><dt>Mon rôle</dt><dd>Mise en place du suivi des demandes clients.</dd></div>
+        <div><dt>Solution</dt><dd>Le formulaire du site enregistre chaque demande dans la base et prévient l'équipe par email. Les responsables la suivent ensuite dans un tableau de bord protégé par connexion&nbsp;: statut, notes, graphiques par jour, semaine ou mois.</dd></div>
+        <div><dt>Base de données</dt><dd>Conçue en SQL sur phpMyAdmin&nbsp;: 5 tables (demandes, responsables, réglages, et deux tables de sécurité). Chaque demande garde sa référence, sa date, son statut, une note interne et le nom de la personne qui l'a modifiée. L'historique de l'ancien outil, Web3Forms, a été repris par des scripts d'import SQL.</dd></div>
+        <div><dt>Sécurité</dt><dd>Mots de passe hachés, limite d'envois par adresse IP contre le spam, blocage après plusieurs échecs de connexion.</dd></div>
+        <div><dt>Outils</dt><dd>MySQL, SQL, phpMyAdmin, PHP, cPanel</dd></div>
+        <div><dt>Mon rôle</dt><dd>Conception de la base, développement de l'espace responsables et mise en ligne.</dd></div>
       </dl>
       <div class="sheet-shots">
         <figure>
