@@ -7,6 +7,28 @@
   document.querySelectorAll('.hero-intro > *').forEach((el, i) => el.style.setProperty('--i', i));
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('is-loaded')));
 
+  // Adresse propre : les liens internes défilent vers la section sans ajouter « #section » à l'adresse
+  const cleanUrl = () => history.replaceState(null, '', location.pathname + location.search);
+  document.addEventListener('click', (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute('href').slice(1);
+    const target = id && document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    // Le clavier et les lecteurs d'écran suivent aussi
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+    if (location.hash) cleanUrl();
+  });
+  // Un ancien lien partagé (ybakas.me/#projets) ouvre toujours la bonne section, puis l'adresse est nettoyée
+  if (location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))) {
+    if (document.readyState === 'complete') cleanUrl();
+    else window.addEventListener('load', cleanUrl, { once: true });
+  }
+
   // Menu du hero sur téléphone
   const heroNav = document.querySelector('.hero-nav');
   const menuBtn = heroNav && heroNav.querySelector('.menu-btn');
